@@ -1,7 +1,11 @@
 const axios = require("axios").default;
 
+<<<<<<< HEAD
 const token =
   "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MjI2NzEzOTksImlhdCI6MTYyMjY1MzM5OX0.yzll8R7qCe7cN3gNKYugVmj4ju5MlOA2JI3M2I5gtH9HNUyaSACsg3bzTQuIbkcs6GqKGsgmAhfSKAiS31fGuQ";
+=======
+const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MjI2NzEzOTksImlhdCI6MTYyMjY1MzM5OX0.yzll8R7qCe7cN3gNKYugVmj4ju5MlOA2JI3M2I5gtH9HNUyaSACsg3bzTQuIbkcs6GqKGsgmAhfSKAiS31fGuQ";
+>>>>>>> a65aaaae66909820dea90b0248afd8a1052cf8b3
 
 const instance = axios.create({
   timeout: 10000,
@@ -59,7 +63,10 @@ module.exports.updateByID = async function (req) {
     const response = await instance.put(
       "http://localhost:8081/api/v1/shops/facture/" + req.body.idFacture,
       {
+<<<<<<< HEAD
         dateFacture: req.body.dateFcture,
+=======
+>>>>>>> a65aaaae66909820dea90b0248afd8a1052cf8b3
         montantFacture: req.body.montantFacture,
         idCommande: req.body.idCommande,
         idPayement: req.body.idPayement,
