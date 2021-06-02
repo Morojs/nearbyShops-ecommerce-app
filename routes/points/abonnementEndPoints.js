@@ -6,7 +6,7 @@ const abonnement = require("../../helpers/abonnementRequests");
 router.get("/admin/abonnement", async function (req, res, next) {
   var instance = await abonnement.getAll();
   res.render("index", {
-    title: "admin/pages/abonnement/layout/planAbonnement",
+    url: "admin/pages/abonnement/layout/planAbonnement",
     data: instance,
   });
 });
