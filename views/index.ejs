@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
+   <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+     <![endif]-->
+     <% include ./admin/meta/header %>
+
+</head>
+
+<body class="sidebar-mini fixed">
+   <div class="loader-bg">
+      <div class="loader-bar">
+      </div>
+   </div>
+   <div class="wrapper">
+      <!-- Navbar-->
+      <% include ./admin/partials/navbar/headerNavBar  %>
+       <!-- Navbar-->
+
+      <!-- Side-Nav-->
+      <% include  ./admin/partials/navbar/sideNavBar  %>
+      <!-- Side-Nav-->
+
+      <!-- Sidebar chat start -->
+      <% include ./admin/partials/navbar/sideBarChatStart  %>
+        <!-- Sidebar chat start -->
+
+       <!-- Body Contents  -->
+   <div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+       <div class="row">
+          <div class="main-header">
+             <h4>ADMIN DASHBOARD</h4>
+          </div>
+        </div>
+        <!-- PRODUCT STATISTICS -->
+        <% include ./admin/pages/statistics/layout/productStatistics  %>
+        <!-- PRODUCT STATISTICS -->
+    </div>
+    <% if (title!='null') { %>
+        <%- include(title); -%>
+    <% } %>
+    <!-- Main content ends -->
+    <!-- Container-fluid ends -->
+    <div class="fixed-button">
+       <a href="#!" class="btn btn-md btn-primary">
+         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+       </a>
+    </div>
+ </div>
+   </div>
+
+   <!-- Warning Section Starts -->
+   <!-- Older IE warning message -->
+   <!--[if lt IE 9]>
+      <div class="ie-warning">
+          <h1>Warning!!</h1>
+          <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+          <div class="iew-container">
+              <ul class="iew-download">
+                  <li>
+                      <a href="http://www.google.com/chrome/">
+                          <img src="assets/images/browser/chrome.png" alt="Chrome">
+                          <div>Chrome</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.mozilla.org/en-US/firefox/new/">
+                          <img src="assets/images/browser/firefox.png" alt="Firefox">
+                          <div>Firefox</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://www.opera.com">
+                          <img src="assets/images/browser/opera.png" alt="Opera">
+                          <div>Opera</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.apple.com/safari/">
+                          <img src="assets/images/browser/safari.png" alt="Safari">
+                          <div>Safari</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                          <img src="assets/images/browser/ie.png" alt="">
+                          <div>IE (9 & above)</div>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <p>Sorry for the inconvenience!</p>
+      </div>
+      <![endif]-->
+   <!-- Warning Section Ends -->
+
+   <!-- Required Jqurey -->
+   <script src="/plugins/Jquery/dist/jquery.min.js"></script>
+   <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+   <script src="/plugins/tether/dist/js/tether.min.js"></script>
+
+   <!-- Required Fremwork -->
+   <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+   <!-- Scrollbar JS-->
+   <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+   <script src="/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+   <!--classic JS-->
+   <script src="/plugins/classie/classie.js"></script>
+
+   <!-- notification -->
+   <script src="/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+   <!-- Sparkline charts -->
+   <script src="/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+   <!-- Counter js  -->
+   <script src="/plugins/waypoints/jquery.waypoints.min.js"></script>
+   <script src="/plugins/countdown/js/jquery.counterup.js"></script>
+
+   <!-- Echart js -->
+   <script src="/plugins/charts/echarts/js/echarts-all.js"></script>
+
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+   <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+   <!-- custom js -->
+   <script type="text/javascript" src="/js/main.min.js"></script>
+   <script type="text/javascript" src="/pages/dashboard.js"></script>
+   <script type="text/javascript" src="/pages/elements.js"></script>
+   <script src="/js/menu.min.js"></script>
+<script>
+var $window = $(window);
+var nav = $('.fixed-button');
+$window.scroll(function(){
+    if ($window.scrollTop() >= 200) {
+       nav.addClass('active');
+    }
+    else {
+       nav.removeClass('active');
+    }
+});
+</script>
+
+</body>
+
+</html>
