@@ -63,10 +63,7 @@ module.exports.updateByID = async function (req) {
     const response = await instance.put(
       "http://localhost:8081/api/v1/shops/facture/" + req.body.idFacture,
       {
-<<<<<<< HEAD
         dateFacture: req.body.dateFcture,
-=======
->>>>>>> a65aaaae66909820dea90b0248afd8a1052cf8b3
         montantFacture: req.body.montantFacture,
         idCommande: req.body.idCommande,
         idPayement: req.body.idPayement,
