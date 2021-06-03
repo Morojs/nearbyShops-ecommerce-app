@@ -6,8 +6,8 @@ const boutique = require("../../helpers/boutiqueRequests");
 router.get("/admin/boutique", async function (req, res, next) {
   var instance = await boutique.getAll();
   res.render("index", {
-    url: "",
-    data: instance,
+    url: "admin/pages/boutique/layout/boutique",
+    data: [],
   });
 });
 
