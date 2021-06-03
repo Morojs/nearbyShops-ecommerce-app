@@ -1,6 +1,7 @@
 const axios = require("axios").default;
+const config = require("config");
 
-const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MjI2NzU2MTcsImlhdCI6MTYyMjY1NzYxN30.xRExXKeY_-wak1JT7utnoTvBGQsBQ-PE79LkW0nl60r9s3-1JRGePR2Oshucm2W0iVwyMoA1sbc_iqJATi0gEQ";
+const token = config.get("jwt.token");
 
 const instance = axios.create({
   timeout: 10000,
@@ -40,7 +41,7 @@ module.exports.addNew = async function (req) {
       "http://localhost:8081/api/v1/shops/payment/",
       {
         idPayement: "",
-        discriminant: req.body.discriminant,		
+        discriminant: req.body.discriminant,
         datePayment: req.body.datePayment,
         nomSurCarte: req.body.nomSurCarte,
         numCarte: req.body.numCarte,
@@ -48,10 +49,10 @@ module.exports.addNew = async function (req) {
         cvv: req.body.cvv,
         type: req.body.type,
         numCash: req.body.numCash,
-        nomLivreur: req.body.nomLivreur,		
-        cinClient: req.body.cinClient,	
-        dateLivraison: req.body.dateLivraison,	
-        montant: req.body.montant,	
+        nomLivreur: req.body.nomLivreur,
+        cinClient: req.body.cinClient,
+        dateLivraison: req.body.dateLivraison,
+        montant: req.body.montant,
         idPersonne: req.body.idPersonne,
       }
     );
@@ -67,7 +68,7 @@ module.exports.updateByID = async function (req) {
     const response = await instance.put(
       "http://localhost:8081/api/v1/shops/payment/" + req.body.idPayment,
       {
-        discriminant: req.body.discriminant,		
+        discriminant: req.body.discriminant,
         datePayment: req.body.datePayment,
         nomSurCarte: req.body.nomSurCarte,
         numCarte: req.body.numCarte,
@@ -75,10 +76,10 @@ module.exports.updateByID = async function (req) {
         cvv: req.body.cvv,
         type: req.body.type,
         numCash: req.body.numCash,
-        nomLivreur: req.body.nomLivreur,		
-        cinClient: req.body.cinClient,	
-        dateLivraison: req.body.dateLivraison,	
-        montant: req.body.montant,	
+        nomLivreur: req.body.nomLivreur,
+        cinClient: req.body.cinClient,
+        dateLivraison: req.body.dateLivraison,
+        montant: req.body.montant,
         idPersonne: req.body.idPersonne,
       }
     );

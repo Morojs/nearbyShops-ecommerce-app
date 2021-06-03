@@ -3,10 +3,12 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-
 // this is the place where we will be defining all our website routes i.e. routes/index file.
 var indexRouter = require("./routes/index");
 var app = express();
+
+//Environment
+var isProduction = process.env.NODE_ENV === "development";
 
 // Express EJS Extend
 // Layouts support for EJS templates in Express 3+.
@@ -39,8 +41,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-module.exports = app;
 
 // SET PORT
 app.listen(8040);

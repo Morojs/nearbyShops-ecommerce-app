@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Morojs/nearbyShops-ecommerce-app#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "config": "^3.3.6",
     "cookie-parser": "^1.4.5",
     "debug": "^4.3.1",
     "dotenv": "^10.0.0",

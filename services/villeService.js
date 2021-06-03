@@ -1,6 +1,7 @@
 const axios = require("axios").default;
+const config = require("config");
 
-const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MjI2NzU2MTcsImlhdCI6MTYyMjY1NzYxN30.xRExXKeY_-wak1JT7utnoTvBGQsBQ-PE79LkW0nl60r9s3-1JRGePR2Oshucm2W0iVwyMoA1sbc_iqJATi0gEQ";
+const token = config.get("jwt.token");
 
 const instance = axios.create({
   timeout: 10000,
