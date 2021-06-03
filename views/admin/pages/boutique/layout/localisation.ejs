@@ -1,0 +1,136 @@
+
+         <!-- Row end -->
+         <!-- Container-fluid starts -->
+         <div class="container-fluid">
+            <!-- Header Starts -->
+            <div class="row">
+               <div class="col-sm-12 p-0">
+                  <div class="main-header">
+                     <h4>SECTION LOCALISATION</h4>
+                   
+                     <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                        <li class="breadcrumb-item">
+                           <a href="index.html">
+                              <i class="icofont icofont-home"></i>
+                           </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#">AJOUT</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#"></a>MODIFICATION</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#">SUPPRESSION</a>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <!-- Header end -->
+
+            <!-- Tables start -->
+            <!-- Row start -->
+            <div class="row">
+               <div class="col-sm-12">
+                  <!-- Basic Table starts -->
+        
+                  <!-- Contextual classes table starts -->
+                  <div class="card">
+                     <div class="card-header">
+                        <h5 class="card-header-text">La gestion des localisations</h5>
+                        <p>Associés aux clients. </p>
+                        
+                     </div>
+                             <!-- Row start -->
+        <div class="row">
+            <!-- Multiple Open Accordion start -->
+            <div class="col-lg-6">
+               <div class="card">
+                  <div class="card-block accordion-block">
+                     <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="accordion-panel">
+                           <div class="accordion-heading" role="tab" id="headingTwo">
+                              <h3 class="card-title accordion-title">
+                                <button type="button" class="btn btn-default waves-effect"  data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    AJOUTER UNE NOUVELLE Localisation
+                                    <span class="badge">FORM</span>
+                                  </button>
+               </h3>
+                           </div>
+                           <% include addFormLocalisation %> 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Multiple Open Accordion ends -->
+
+          
+            <!-- Single Open Accordion ends -->
+         </div>
+                     <div class="card-block">
+                        <div class="row">
+                           <div class="col-sm-3 table-responsive">
+                              <table class="table">
+                                 <thead>
+                                    <tr>
+                                       <th><button type="button" class="btn btn-default waves-effect">Generale
+                                      </button>
+                                    </th>
+                                       <th>Altitude</th>
+                                       <th>Langitude</th>
+                                       <th></th>
+                                       <th><button type="button" class="btn btn-default waves-effect">COUNT
+                                        <span class="badge"><%=data['data'].length%></span>
+                                      </button></th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <form action="/admin/localisation/edit" method="POST">
+                                        <% if (data['data'].length>0) { %>
+                                        <% data['data'].forEach(function(element){ %> 
+                                        <tr class="table-active">
+                                           <td>
+                                               <label class="badge badge-inverse-default"><%=element.id%></label>
+                                               <input type="hidden" name="id" value="<%=element.id%>">
+                                          </td>
+                                           <td> 
+                                            <div class="form-group has-danger">
+                                                <input type="text" class="form-control form-control-success" name="altitude" id="inputSuccess1" value='<%=element.altitude%>'>
+                                                <!-- <div class="form-control-feedback">Success! You've done it.</div>
+                                                <small class="form-text text-muted">Example help text that remains unchanged.</small> -->
+                                             </div>
+                                    
+                                         </td>
+                                         <td>
+                                            <div class="form-group has-danger">
+                                                <input type="text" class="form-control form-control-success" name="langitude" id="inputSuccess1" value='<%=element.langitude%>'>
+                                                <!-- <div class="form-control-feedback">Success! You've done it.</div>
+                                                <small class="form-text text-muted">Example help text that remains unchanged.</small> -->
+                                             </div>
+                                         </td>
+                                         <td>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="APPLIQUER LES CHANGEMENTS">
+                                                <i class="icofont icofont-refresh"></i><span class="m-l-10">sync</span>
+                                            </button>
+                                         </td>
+                                         <td>
+                                            <button type="button" onclick="window.location='/admin/localisation/<%=element.id%>'" class="btn btn-danger waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="SUPPRIMER">
+                                                <i class="icon-trash"></i><span class="m-l-10">SUPPRIMER</span>
+                                            </button>
+                                         </td>
+                                        </tr>
+                                        <% }) %> 
+                                        <% } %>
+                                     </form>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Contextual classes table ends -->
+               </div>
+            </div>
+            <!-- Row end -->
+            <!-- Tables end -->
+         </div>
+         
