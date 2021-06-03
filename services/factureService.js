@@ -3,7 +3,7 @@ const config = require("config");
 const token = config.get("jwt.token");
 
 const instance = axios.create({
-  timeout: 10000,
+  timeout: 1000,
   headers: {
     Authorization: "Bearer " + token,
     "Content-Type": "application/json",
@@ -58,14 +58,8 @@ module.exports.updateByID = async function (req) {
     const response = await instance.put(
       "http://localhost:8081/api/v1/shops/facture/" + req.body.idFacture,
       {
-<<<<<<< HEAD
+
         dateFacture: req.body.dateFcture,
-=======
-<<<<<<< HEAD
-=======
-        dateFacture: req.body.dateFcture,
->>>>>>> 5df46f91cbb1892e5c369c9bd101cb6a416c145b
->>>>>>> 84670d4e7ea178bed7027362f4ca794a29e5f4c6
         montantFacture: req.body.montantFacture,
         idCommande: req.body.idCommande,
         idPayement: req.body.idPayement,

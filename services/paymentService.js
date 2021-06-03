@@ -4,7 +4,7 @@ const config = require("config");
 const token = config.get("jwt.token");
 
 const instance = axios.create({
-  timeout: 10000,
+  timeout: 1000,
   headers: {
     Authorization: "Bearer " + token,
     "Content-Type": "application/json",
