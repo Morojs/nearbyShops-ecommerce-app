@@ -1,6 +1,7 @@
 const axios = require("axios").default;
+const config = require("config");
 
-const token = "";
+const token = config.get("jwt.token");
 
 const instance = axios.create({
   timeout: 10000,
